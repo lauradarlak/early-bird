@@ -25,15 +25,15 @@ export default class Products extends Component {
     return (
       <div>
       <Container>
-      <Row>
       <div>
         <h2>Product List Container</h2>
       </div>
+      <Row>
       {this.state.productList.map(product =>
         <Col md="4">
           <Card body>
             <CardTitle>{product.name}</CardTitle>
-            <CardText>{product.price}</CardText>
+            <CardText>{product.farmer}</CardText>
           </Card>
         </Col>
       )}
