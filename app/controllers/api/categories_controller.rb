@@ -5,7 +5,8 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    render json: Category.find_by(slug: params[:slug])
+    @category = Category.find_by(slug: params[:slug])
+    render json: @category
   end
 
 end
