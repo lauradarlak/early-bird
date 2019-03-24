@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './containers/App';
+import Categories from './containers/Categories';
+import Products from './containers/Products';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <App />,
+  <Router>
+    <div>
+      <Route exact path='/' component={App} />
+      <Route exact path='/categories/:category_slug' component={Products} />
+    </div>
+  </Router>,
   document.getElementById('root')
 );
 

@@ -29,8 +29,6 @@ export default class App extends Component {
         <h1>Testing App Container!</h1>
         <Categories categories={this.state.categories}/>
       </Container>
-
-
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
@@ -13,7 +14,9 @@ const Categories = (props) => (
       <Card body>
         <CardTitle>{category.slug}</CardTitle>
         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-        <Button>Go somewhere</Button>
+        <Link to={`/categories/${category.slug}`}>
+          <span>Click</span>
+        </Link>
       </Card>
     </Col>
   )}
