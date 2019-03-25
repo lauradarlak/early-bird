@@ -5,9 +5,10 @@ import Home from './containers/Home'
 import Cart from './containers/Cart'
 import ProductsList from './containers/Products'
 
-const Router = () => (
+
+const Router = (props) => (
   <Switch>
-    <Route exact path='/' component={Home} />
+    <Route exact path='/' render={(props) => <Home {...props} />} />
     // <Route exact path='/cart' component={Cart} />
     // <Route exact path='/categories/:category_slug' component={ProductsList} />
   </Switch>

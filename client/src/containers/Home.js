@@ -1,9 +1,14 @@
 import React from 'react';
 import Categories from './Categories';
 
+import { Container } from "reactstrap";
+
 export default function Home(props) {
-  return <div>
-    <h2>Homepage: All Categories</h2>
-    <Categories />
-  </div>
+
+  return (
+    <Container>
+      <h2>Homepage: All Categories</h2>
+      <Categories categories={props.categories} />
+    </Container>
+  )
 }
