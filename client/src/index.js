@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './containers/App';
-import Categories from './containers/Categories';
-import Products from './containers/Products';
-
+import { createStore} from 'redux';
+import { reducer } from './reducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+const store = createStore(
+  reducer
+)
+
 ReactDOM.render(
-  <Router>
-    <div>
-      <Route exact path='/' component={App} />
-      <Route exact path='/categories/:category_slug' component={Products} />
-    </div>
-  </Router>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
