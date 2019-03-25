@@ -1,14 +1,16 @@
 import React from 'react';
+import { Container } from "reactstrap";
 import Categories from './Categories';
 
-import { Container } from "reactstrap";
+{/* Stateless */}
 
-export default function Home(props) {
+const Home = props => (
 
-  return (
     <Container>
       <h2>Homepage: All Categories</h2>
       <Categories categories={props.categories} />
     </Container>
-  )
-}
+
+)
+
+export default Home

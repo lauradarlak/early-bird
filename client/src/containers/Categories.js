@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
-const Categories = (props) => (
+{/* Stateless */}
+
+const Categories = props => (
 
   <Row>
   <div>
