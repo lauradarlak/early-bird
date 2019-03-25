@@ -8,8 +8,8 @@ import ProductsList from './containers/Products'
 const Router = () => (
   <Switch>
     <Route exact path='/' component={Home} />
-    <Route exact path='/cart' component={Cart} />
-    <Route exact path='/categories/:category_slug' component={ProductsList} />
+    // <Route exact path='/cart' component={Cart} />
+    // <Route exact path='/categories/:category_slug' component={ProductsList} />
   </Switch>
 )
 

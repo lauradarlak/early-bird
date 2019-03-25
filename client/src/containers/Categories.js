@@ -9,17 +9,7 @@ const Categories = (props) => (
   <div>
     <h2>Categories Container</h2>
   </div>
-  {props.categories.map(category =>
-    <Col md="4">
-      <Card body>
-        <CardTitle>{category.slug}</CardTitle>
-        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-        <Link to={`/categories/${category.slug}`}>
-          <span>Click</span>
-        </Link>
-      </Card>
-    </Col>
-  )}
+
   </Row>
 );
 

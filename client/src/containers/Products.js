@@ -28,7 +28,8 @@ export default class Products extends Component {
       <div>
         <h2>Product List Container</h2>
       </div>
-      <Row>
+      {/*
+        <Row>
       {this.state.productList.map(product =>
         <Col md="4">
           <Card body>
@@ -38,6 +39,10 @@ export default class Products extends Component {
         </Col>
       )}
       </Row>
+
+
+
+        */}
       </Container>
       </div>
     )

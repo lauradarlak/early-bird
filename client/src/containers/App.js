@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Router from './Router';
+import Router from '../Router';
 
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
