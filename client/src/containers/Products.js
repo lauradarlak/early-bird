@@ -4,11 +4,11 @@ import { fetchProducts } from '../actions/productActions';
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
-export default class Products extends Component {
+class Products extends Component {
 
   componentDidMount() {
     const { category_slug } = this.props.match.params
-    this.props.dispatch(getProducts(category_slug))
+    this.props.dispatch(fetchProducts(category_slug))
   }
 
   render() {

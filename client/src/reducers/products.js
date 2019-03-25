@@ -2,7 +2,7 @@ import {
   FETCH_PRODUCTS_BEGIN,
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE
-} from "./productActions";
+} from "../actions/productActions";
 
 const initialState = {
   items: [],
@@ -24,7 +24,7 @@ export default function products(state = initialState, action) {
     case FETCH_PRODUCTS_FAILURE:
       return {
         ...state,
-        error: action.payload..error,
+        error: action.payload.error,
         items: []
       };
     default:
