@@ -33,7 +33,7 @@ class Products extends Component {
 
 const mapStateToProps = state => ({
   products: state.products.items,
-  error: state.products.erro
+  error: state.products.error
 });
 
 export default connect(mapStateToProps)(Products)

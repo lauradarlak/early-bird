@@ -19,7 +19,7 @@ export default function products(state = initialState, action) {
     case FETCH_PRODUCTS_SUCCESS:
       return {
         ...state,
-        products: action.payload.products
+        items: action.payload.products
       };
     case FETCH_PRODUCTS_FAILURE:
       return {
