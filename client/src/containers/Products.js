@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {fetchProducts } from '../actions/productActions'
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
@@ -10,14 +11,8 @@ export default class Products extends Component {
 
   componentDidMount() {
     const { category_slug } = this.props.match.params
+    this.props.dispatch(getProducts(category_slug))
 
-    fetch(`http://localhost:3001/api/categories/${category_slug}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          productList: data.products
-        })
-      })
 
   }
 

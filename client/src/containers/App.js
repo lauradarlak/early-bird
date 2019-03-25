@@ -28,9 +28,10 @@ export default class App extends Component {
     return (
       <Switch>
         <Route exact path='/' render={(props) => (<Home categories={this.state.categories} {...props} /> )} />
+        <Route exact path='/categories/:category_slug' component={ProductsList} />
         {/*
           <Route exact path='/cart' component={Cart} />
-         <Route exact path='/categories/:category_slug' component={ProductsList} />
+
           */}
       </Switch>
     )
