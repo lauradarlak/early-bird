@@ -6,6 +6,28 @@ import {
 
 const initialState = {
   items: [],
-  loading: false,
   error: null
 };
+
+export default function products(state = initialState, action) {
+  switch (action.type) {
+    case FETCH_PRODUCTS_BEGIN:
+      return {
+        ...state,
+        error: null
+      };
+    case FETCH_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        products: action.payload.products
+      };
+    case FETCH_PRODUCTS_FAILURE:
+      return {
+        ...state,
+        error: action.payload..error,
+        items: []
+      };
+    default:
+      return state;
+  }
+}

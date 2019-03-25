@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from './containers/App';
 import { Provider } from 'react-redux';
-import { createStore} from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 import rootReducer from './reducers/index';
 
@@ -13,6 +13,7 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
   rootReducer,
+  applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
