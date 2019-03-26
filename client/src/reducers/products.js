@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 import {
   FETCH_PRODUCTS_BEGIN,
   FETCH_PRODUCTS_SUCCESS,
@@ -6,10 +8,12 @@ import {
 
 const initialState = {
   items: [],
-  error: null
+  error: null,
+
 };
 
-export default function products(state = initialState, action) {
+
+export function products(state = initialState, action) {
   switch (action.type) {
     case FETCH_PRODUCTS_BEGIN:
       return {
@@ -29,5 +33,18 @@ export default function products(state = initialState, action) {
       };
     default:
       return state;
+  }
+}
+
+export function addToCart(state = {}, action) {
+
+  switch (action.type) {
+    case 'ADD':
+      return {
+        ...state,
+        quantity: action.payload.item.quantity - 1
+      }
+    default:
+      return state
   }
 }

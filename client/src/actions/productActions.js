@@ -29,3 +29,10 @@ export const fetchProductsFailure = error => ({
   type: FETCH_PRODUCTS_FAILURE,
   payload: { error }
 });
+
+export const addToCart = (item, products) => ({
+  type: 'ADD',
+  payload: { item },
+  products
+
+});

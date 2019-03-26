@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../actions/productActions';
+import { fetchProducts, addToCart } from '../actions/productActions';
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
@@ -12,6 +12,7 @@ class Products extends Component {
   }
 
   render() {
+
     const { error, products, addToCart } = this.props;
     return (
       <Container>
@@ -23,8 +24,8 @@ class Products extends Component {
             <CardTitle>Item: {product.name}</CardTitle>
             <CardText>Farmer: {product.farmer}</CardText>
             <CardText>Price: ${product.price}</CardText>
-            <CardText>Quantity Remaining: {product.quanity || 0}</CardText>
-            <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+            <CardText>Quantity Remaining: {product.quantity || 0}</CardText>
+            <Button onClick={() => addToCart(product.id)}>Add to Cart</Button>
           </Card>
         </Col>
         )}
@@ -36,14 +37,18 @@ class Products extends Component {
 
 const mapStateToProps = state => ({
   products: state.products.items,
-  error: state.products.error
+  error: state.products.error,
+  count: state.products.count
+
 });
 
 function mapDispatchToProps(dispatch) {
+
   return {
-    addToCart: item => {
-      dispatch({ type: 'ADD', payload: item })
-    },
+
+    addToCart: item => dispatch({
+      type: 'ADD',
+      payload: item }),
     fetchProducts: cat => dispatch(fetchProducts(cat))
   }
 }
