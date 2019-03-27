@@ -1,4 +1,6 @@
 
+
+
 export function fetchProducts(category_slug) {
   return dispatch => {
     dispatch(fetchProductsBegin());
@@ -22,7 +24,7 @@ export const fetchProductsBegin = () => ({
 
 export const fetchProductsSuccess = products => ({
   type: FETCH_PRODUCTS_SUCCESS,
-  payload: { products }
+  products
 });
 
 export const fetchProductsFailure = error => ({
@@ -30,9 +32,8 @@ export const fetchProductsFailure = error => ({
   payload: { error }
 });
 
-export const addToCart = (item, products) => ({
+export const addToCart = (item) => ({
   type: 'ADD',
-  payload: { item },
-  products
+  payload: { item }
 
 });

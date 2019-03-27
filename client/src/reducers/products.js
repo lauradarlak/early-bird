@@ -14,6 +14,7 @@ const initialState = {
 
 
 export function products(state = initialState, action) {
+
   switch (action.type) {
     case FETCH_PRODUCTS_BEGIN:
       return {
@@ -23,7 +24,7 @@ export function products(state = initialState, action) {
     case FETCH_PRODUCTS_SUCCESS:
       return {
         ...state,
-        items: action.payload.products
+        items: action.products
       };
     case FETCH_PRODUCTS_FAILURE:
       return {
@@ -31,20 +32,38 @@ export function products(state = initialState, action) {
         error: action.payload.error,
         items: []
       };
+      case 'ADD':
+      debugger
+        return {
+          ...state,
+            items: state.items.map((item) => {
+              if (item.id === action.payload.item.id) {
+                return {
+                  ...item,
+                  quantity: item.quantity - 1
+                }
+              } else {
+                return item
+              }
+            })
+        }
+
     default:
       return state;
   }
 }
+ {/*
+   export function addToCart(state = {}, action) {
 
-export function addToCart(state = {}, action) {
+     switch (action.type) {
+       case 'ADD':
+         return {
+           ...state,
+           quantity: action.payload.item.quantity - 1
+         }
+       default:
+         return state
+     }
+   }
 
-  switch (action.type) {
-    case 'ADD':
-      return {
-        ...state,
-        quantity: action.payload.item.quantity - 1
-      }
-    default:
-      return state
-  }
-}
+   */}
