@@ -30,6 +30,9 @@ class Products extends Component {
         </Col>
         )}
       </Row>
+      <Row>
+        
+      </Row>
       </Container>
     )
   }

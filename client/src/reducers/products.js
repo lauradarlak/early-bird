@@ -33,7 +33,7 @@ export function products(state = initialState, action) {
         items: []
       };
       case 'ADD':
-      debugger
+
         return {
           ...state,
             items: state.items.map((item) => {
