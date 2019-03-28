@@ -5,13 +5,13 @@ import { Container, Row, Col, Card,
 
 {/* Stateless */}
 
-const Categories = props => (
+const Categories = ({ categories }) => (
 
   <Row>
   <div>
     <h2>Categories Container</h2>
   </div>
-  {props.categories.map(category =>
+  {categories.map(category =>
    <Col md="4">
      <Card body>
        <CardTitle>{category.slug}</CardTitle>
