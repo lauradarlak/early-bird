@@ -7,7 +7,7 @@ import Categories from './Categories';
 class Home extends Component {
 
   componentDidMount() {
-    if (this.props.categories.length == 0) {
+    if (this.props.categories.length === 0) {
       this.props.fetchCategories()
     }
   }

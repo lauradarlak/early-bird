@@ -1,30 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Card,
-  Button, CardTitle, CardText } from "reactstrap";
+  Button, CardTitle, CardText, CardImg } from "reactstrap";
 
 {/* Stateless */}
 
 const Categories = ({ categories }) => (
-
-  <Row>
-  <div>
-    <h2>Categories Container</h2>
-  </div>
-  {categories.map(category =>
-   <Col md="4">
-     <Card body>
-       <CardTitle>{category.slug}</CardTitle>
-       <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-       <Link to={`/categories/${category.slug}`}>
-         <span>Click</span>
-       </Link>
-     </Card>
-   </Col>
- )}
-  </Row>
+  <React.Fragment>
+    <Row>
+      <Col>
+        <h2 className="mb-4">All Product Categories</h2>
+      </Col>
+    </Row>
+    <Row>
+    {categories.map(category =>
+     <Col md="4">
+       <Card body>
+       <CardImg height="200px" src={`${category.image}`}/>
+        <CardTitle className="text-center font-weight-bold mt-3">{category.name}</CardTitle>
+         <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+         <Button color="success" tag={Link} to={`/categories/${category.slug}`}>Browse {category.name}</Button>
+       </Card>
+     </Col>
+   )}
+    </Row>
+  </React.Fragment>
 );
-
-
 
 export default Categories;
