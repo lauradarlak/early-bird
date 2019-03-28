@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts, addToCart } from '../actions/productActions';
+import Cart from './Cart'
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
@@ -13,7 +14,7 @@ class Products extends Component {
 
   render() {
 
-    const { error, products, addToCart } = this.props;
+    const { error, products, addToCart, cart } = this.props;
     return (
       <Container>
         <h2>Product List Container</h2>
@@ -30,17 +31,22 @@ class Products extends Component {
         </Col>
         )}
       </Row>
+
+
       <Row>
-        
+
+      <Cart cart={cart} />
       </Row>
       </Container>
     )
+  
   }
 }
 
 const mapStateToProps = state => ({
   products: state.products.items,
   error: state.products.error,
+  cart: state.cart
 
 
 });
