@@ -23,7 +23,7 @@ import React from 'react'
         }
       }).then(res => {
         if(res.ok) {
-          return res;
+          redirect: window.location.replace("http://localhost:3000/order")
         } else {
           throw Error(`Request rejected with status ${res.status}`);
         }

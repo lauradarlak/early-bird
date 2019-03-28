@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Cart from './Cart';
+import Order from './Order';
 import ProductsList from './Products';
 
 import { Container, Row, Col, Card,
@@ -29,10 +30,8 @@ export default class App extends Component {
       <Switch>
         <Route exact path='/' render={(props) => (<Home categories={this.state.categories} {...props} /> )} />
         <Route exact path='/categories/:category_slug' component={ProductsList} />
-        {/*
-          <Route exact path='/cart' component={Cart} />
+        <Route exact path='/order' component={Order} />
 
-          */}
       </Switch>
     )
   }
