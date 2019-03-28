@@ -16,16 +16,20 @@ import React from 'react'
     const orderArray = cart;
     orderArray.map(item => {
       fetch(`http://localhost:3001/api/products/${item.id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         body: JSON.stringify(item),
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(res => res.json())
-      .then(response => console.log('Success:', JSON.stringify(response)))
-      .catch(error => console.error('Error:', error));
+      }).then(res => {
+        if(res.ok) {
+          return res;
+        } else {
+          throw Error(`Request rejected with status ${res.status}`);
+        }
+      })
+      .catch(console.error)
     })
-
   }
 
   const hasProducts = cart.length > 0;
