@@ -1,6 +1,6 @@
 import React from 'react'
 
- const Cart = ({ cart }) => {
+ const Cart = ({ cart, products }) => {
    function compare(a, b) {
       let comparison = 0;
       if (a.id > b.id) {
@@ -11,6 +11,23 @@ import React from 'react'
       return comparison;
     }
 
+  const handleOnSubmit = event => {
+
+    const orderArray = cart;
+    orderArray.map(item => {
+      fetch(`http://localhost:3001/api/products/${item.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(item),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .then(response => console.log('Success:', JSON.stringify(response)))
+      .catch(error => console.error('Error:', error));
+    })
+
+  }
+
   const hasProducts = cart.length > 0;
   const orderedCart = cart.sort(compare);
   const arr = cart;
@@ -18,7 +35,7 @@ import React from 'react'
   const nodes = hasProducts ? (
 
     orderedCart.map(item =>
-        <p>{item.name} x {item.quantity} = ${ item.total }</p>
+        <p>{item.name} x {item.orderedQuantity} = ${ item.total }</p>
 
     )
 
@@ -32,7 +49,7 @@ import React from 'react'
       <div>{nodes}</div>
       Total: ${cart.reduce((a, b) => {
           return a + b.total}, 0)}
-
+      <button onClick={() => handleOnSubmit()} type="submit">Send Order</button>
 
     </div>
   )

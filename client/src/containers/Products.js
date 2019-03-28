@@ -35,11 +35,13 @@ class Products extends Component {
 
       <Row>
 
-      <Cart cart={cart} />
+      <Cart
+      cart={cart}
+      products={products} />
       </Row>
       </Container>
     )
-  
+
   }
 }
 
