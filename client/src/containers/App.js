@@ -4,7 +4,7 @@ import Home from './Home';
 import Cart from './Cart';
 import Order from './Order';
 import Navigation from '../components/Navbar';
-import ProductsList from './Products';
+import ProductsContainer from './Products';
 
 import './App.css';
 
@@ -16,7 +16,7 @@ export default class App extends Component {
       <Navigation/>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/categories/:category_slug' component={ProductsList} />
+        <Route exact path='/categories/:category_slug' component={ProductsContainer} />
         <Route exact path='/order' component={Order} />
 
       </Switch>

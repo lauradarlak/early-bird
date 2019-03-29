@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Jumbotron } from "reactstrap";
 import { fetchCategories } from '../actions/categoriesActions';
-import Categories from './Categories';
+import Categories from '../components/Categories';
 
 class Home extends Component {
 
   componentDidMount() {
-    if (this.props.categories.length === 0) {
-      this.props.fetchCategories()
-    }
+    this.props.fetchCategories()
   }
 
   render() {
