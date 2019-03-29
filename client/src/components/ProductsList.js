@@ -6,7 +6,6 @@ import { Container, Row, Col, Card, CardBody,
 
 class ProductsList extends Component {
 
-
   render() {
     const { dispatch, addToCart, products } = this.props;
     const category = products[0]

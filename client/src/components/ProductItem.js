@@ -24,6 +24,4 @@ const ProductItem = ({ dispatch, addToCart, product }) => {
   )
 }
 
-
-
 export default ProductItem
