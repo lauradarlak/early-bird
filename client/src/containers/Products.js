@@ -15,8 +15,14 @@ class ProductsContainer extends Component {
     return (
       <React.Fragment>
       <Container>
-        <ProductList products={selectedCategory} addToCart={addToCart} />
-        <Cart cart={this.props.cart} />
+        <Row className="mt-4">
+          <Col md="10">
+            <ProductList products={selectedCategory} addToCart={addToCart} />
+          </Col>
+          <Col md="2">
+            <Cart cart={this.props.cart} />
+          </Col>
+        </Row>
         </Container>
       </React.Fragment>
     )

@@ -1,12 +1,11 @@
 import React from 'react';
 import { compare } from '../Utils';
 import { updateInventory } from '../actions/cartActions';
+import {  Card, Button, CardTitle, CardText } from "reactstrap";
 
  const Cart = ({ cart, products }) => {
 
-
   const handleOnSubmit = event => {
-
     const orderArray = cart;
     orderArray.map(item => {
       updateInventory(item)
@@ -15,13 +14,10 @@ import { updateInventory } from '../actions/cartActions';
 
   const hasProducts = cart.length > 0;
   const orderedCart = cart.sort(compare);
-  const arr = cart;
-  arr.reduce(function (acc, obj) { return acc + obj.x; }, 0);
   const nodes = hasProducts ? (
 
     orderedCart.map(item =>
-        <p>{item.name} x {item.orderedQuantity} = ${ item.total }</p>
-
+        <CardText>{item.name} x {item.orderedQuantity} = ${ item.total }</CardText>
     )
 
   ) : (
@@ -30,11 +26,16 @@ import { updateInventory } from '../actions/cartActions';
 
   return (
     <div>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      Total: ${cart.reduce((a, b) => {
-          return a + b.total}, 0)}
-      <button onClick={() => handleOnSubmit()} type="submit">Send Order</button>
+      <h3 className="mb-3">Quick Cart</h3>
+      <Card body>
+      {nodes}
+      <strong>Total: ${cart.reduce((a, b) => { return a + b.total }, 0)}</strong>
+      <Button 
+        className="mt-3"
+        disabled={hasProducts ? '' : 'disabled'}
+        color="success" onClick={() => handleOnSubmit()}
+        type="submit">Send Order</Button>
+      </Card>
 
     </div>
   )

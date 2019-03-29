@@ -35,7 +35,10 @@ export function products(state = initialState, action) {
       case 'ADD':
 
         {
-          action.payload.item.quantity -= 1
+          if(action.payload.item.quantity > 0) {
+            action.payload.item.quantity -= 1
+          }
+
 
         }
 

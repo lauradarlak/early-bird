@@ -9,24 +9,29 @@ class ProductsList extends Component {
 
   render() {
     const { error, products, dispatch, addToCart, cart } = this.props;
+    const category = products[0]
+
 
     return (
-        <React.Fragment>
-          <h2>Product List Container</h2>
-          <Row>
-          {products[0].products.map(product =>
-          <Col md="4">
-            <Card body key={product.id}>
-              <CardTitle>Item: {product.name}</CardTitle>
-              <CardText>Farmer: {product.farmer}</CardText>
-              <CardText>Price: ${product.price}</CardText>
-              <CardText>Quantity Remaining: {product.quantity || 0}</CardText>
-              <Button onClick={() => this.props.dispatch(addToCart(product))}>Add to Cart</Button>
-            </Card>
-          </Col>
+      <React.Fragment>
+        <h2 className="mb-3">Browse {category.name}</h2>
+        <Row>
+          {category.products.map(product =>
+            <Col md="4">
+              <Card body key={product.id}>
+                <CardImg height="200px" src={`${product.image}`}/>
+                <CardTitle className="my-1">Product or Variety: {product.name}</CardTitle>
+                <CardText className="mb-1">Farmer: {product.farmer}</CardText>
+                <CardText className="mb-1">Price: ${product.price}</CardText>
+                <CardText className="font-weight-bold">
+                {product.quantity > 0 ? `Quantity Remaining: ${product.quantity}` : 'Sold Out' }
+                </CardText>
+                <Button color="success" onClick={() => this.props.dispatch(addToCart(product))}>Add to Cart</Button>
+              </Card>
+            </Col>
           )}
-          </Row>
-        </React.Fragment>
+        </Row>
+      </React.Fragment>
     )
   }
 }

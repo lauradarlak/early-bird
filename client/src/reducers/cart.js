@@ -4,7 +4,7 @@ const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.id === item.
 const addToCart = (cart, item) => {
   const cartItem = itemInCart(cart, item)
   return cartItem === undefined
-    ? [ ...cartWithoutItem(cart, item), { ...item, orderedQuantity: 1, quantity: item.quantity -1, total: item.price } ]
+    ? [ ...cartWithoutItem(cart, item), { ...item, orderedQuantity: 1, total: item.price } ]
     : [ ...cartWithoutItem(cart, item),
       { ...cartItem,
         orderedQuantity: cartItem.orderedQuantity + 1,
@@ -23,21 +23,3 @@ const cart = (state=[], action) => {
 }
 
 export default cart
-
-{/*
-
-work
-export default function cart(state = [], action) {
-switch(action.type) {
-  case 'ADD':
-    return [
-      ...state, action.payload
-    ]
-
-    default:
-    return state
-
-}
-
-}
-  */}
