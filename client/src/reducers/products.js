@@ -34,18 +34,9 @@ export function products(state = initialState, action) {
       };
       case 'ADD':
 
-        return {
-          ...state,
-            items: state.items.map((item) => {
-              if (item.id === action.payload.item.id) {
-                return {
-                  ...item,
-                  quantity: item.quantity - 1
-                }
-              } else {
-                return item
-              }
-            })
+        {
+          action.payload.item.quantity -= 1
+
         }
 
     default:

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts, addToCart } from '../actions/productActions';
+import { addToCart } from '../actions/productActions';
 import Cart from './Cart'
-import ProductList from './ProductsList';
+import ProductList from '../components/ProductsList';
 import { Container, Row, Col, Card,
   Button, CardTitle, CardText } from "reactstrap";
 
@@ -13,19 +13,21 @@ class ProductsContainer extends Component {
     const selectedCategory = this.props.categories.filter((c) => c.slug === category_slug);
 
     return (
-
-      <ProductList products={selectedCategory} />
+      <React.Fragment>
+      <Container>
+        <ProductList products={selectedCategory} addToCart={addToCart} />
+        <Cart cart={this.props.cart} />
+        </Container>
+      </React.Fragment>
     )
   }
-
 }
 
 const mapStateToProps = state => ({
-  products: state.products.items,
-
-  cart: state.cart,
-  categories: state.categories.items
-
+  categories: state.categories.items,
+  cart: state.cart
 });
 
-export default connect(mapStateToProps)(ProductsContainer)
+
+
+export default connect(mapStateToProps, { addToCart })(ProductsContainer)

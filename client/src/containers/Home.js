@@ -7,7 +7,10 @@ import Categories from '../components/Categories';
 class Home extends Component {
 
   componentDidMount() {
-    this.props.fetchCategories()
+    if(this.props.categories.length === 0) {
+      this.props.fetchCategories()
+    }
+
   }
 
   render() {

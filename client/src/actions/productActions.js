@@ -1,18 +1,7 @@
 
 
 
-export function fetchProducts(category_slug) {
-  return dispatch => {
-    dispatch(fetchProductsBegin());
-    return fetch(`http://localhost:3001/api/categories/${category_slug}`)
-      .then(res => res.json())
-      .then(json => {
-        dispatch(fetchProductsSuccess(json.products));
-        {/* return json.products; */}
-      })
-      .catch(error => dispatch(fetchProductsFailure(error)));
-  };
-}
+
 
 export const FETCH_PRODUCTS_BEGIN = "FETCH_PRODUCTS_BEGIN";
 export const FETCH_PRODUCTS_SUCCESS = "FETCH_PRODUCTS_SUCCESS";
