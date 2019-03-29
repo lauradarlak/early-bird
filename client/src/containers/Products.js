@@ -16,10 +16,10 @@ class ProductsContainer extends Component {
       <React.Fragment>
       <Container>
         <Row className="mt-4">
-          <Col md="10">
+          <Col md="9">
             <ProductList products={selectedCategory} addToCart={addToCart} />
           </Col>
-          <Col md="2">
+          <Col md="3">
             <Cart cart={this.props.cart} />
           </Col>
         </Row>
