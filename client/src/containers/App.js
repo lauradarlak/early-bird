@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
-import Cart from './Cart';
+import Cart from '../components/Cart';
 import Order from './Order';
 import Navigation from '../components/Navbar';
 import ProductsContainer from './Products';
