@@ -10,8 +10,8 @@ earlybird.io is an ecommerce platform for farmers markets built with a React-Red
 
 * Made use of async actions within Redux-thunk and fetch()
 
-![](./public/productpage.jpg =1000px)
-![](./public/cartpage.jpg =1000px)
+![](public/productpage.jpg =1000px)
+![](public/cartpage.jpg =1000px)
 
 ## Installation
 
