@@ -1,6 +1,6 @@
 # earlybird.io
 
-earlybird.io is an ecommerce platform for farmers markets built with a React-Redux front-end and connected to a Rails API backend. Have you ever gone to a farmer’s market only to find that every vendor is sold out of eggs, organic bacon, or fresh whole chickens? earlybird.io is a solution to ensuring that Localvores, like you, always get the fresh food you’re looking, without needing to be first in line at the market. Also, by shopping with earlybird.io farmers know how much product to bring to market and are able to sell more product.
+earlybird.io is an ecommerce platform for farmers markets built with a React-Redux front-end and connected to a Rails API backend. Have you ever gone to a farmer’s market only to find that every vendor is sold out of eggs, organic bacon, or fresh whole chickens? earlybird.io is a solution to ensure that Localvores, like you, always get the fresh food you’re looking, without needing to be first in line at the market.
 
 * Built front-end UI using React and Redux middleware to respond to and modify state change
 
@@ -10,7 +10,8 @@ earlybird.io is an ecommerce platform for farmers markets built with a React-Red
 
 * Made use of async actions within Redux-thunk and fetch()
 
-![products](public/productpage.jpg)
+![homepage](public/homepage.jpg)
+![products](public/productpage.png)
 ![cart](public/cartpage.jpg)
 
 ## Installation

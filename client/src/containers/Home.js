@@ -19,7 +19,7 @@ class Home extends Component {
       <Container className="my-4">
       <Jumbotron>
         <h1 className="display-4">earlybird.io</h1>
-        <p className="lead">Welcome to the <em>earlybird</em> ecommerce platform for the Ithaca Farmers Market. By shopping with earlybird.io farmers know how much product to bring to market, and you will always get the fresh food you are looking for without needing to be first in line at the market!</p>
+        <p className="lead">Welcome to the <em>earlybird</em> ecommerce platform for the Ithaca Farmers Market. By shopping with earlybird.io, you are preordering farm fresh products that will be available for pickup at the market.  Now you will always get the fresh food you are looking for without needing to be first in line at the market!</p>
         <hr className="my-2" />
         <p className="lead mb-0">Products are sorted by category. Within each category you will find products available from all of the farmers who grow, raise, or produce that product.</p>
       </Jumbotron>
