@@ -9,7 +9,7 @@ const ProductItem = ({ dispatch, addToCart, product }) => {
       <Card className="h-100" key={product.id}>
         <CardImg className="pt-3" height="200px" src={`${product.image}`}/>
         <CardBody>
-          <CardTitle className="my-1">Product or Variety: {product.name}</CardTitle>
+          <CardTitle className="my-1">Product: {product.name}</CardTitle>
           <CardText className="mb-1">Farmer: {product.farmer}</CardText>
           <CardText className="mb-1">Price: ${product.price}</CardText>
           <CardText className="font-weight-bold">

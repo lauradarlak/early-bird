@@ -12,14 +12,12 @@ import { Button } from "reactstrap";
 
     return (
       <Button
-        className="mt-3"
+        className="mt-3 d-inline"
         disabled={hasProducts ? '' : 'disabled'}
         color="success" onClick={() => handleOnSubmit()}
         type="submit">Send Order</Button>
     )
 
   }
-
-
 
  export default OrderButton

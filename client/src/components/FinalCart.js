@@ -11,20 +11,23 @@ import { Container, ListGroup, ListGroupItem } from 'reactstrap';
 
   const cartItems = hasProducts ? (
     orderedCart.map(item =>
-        <ListGroupItem>{item.name} x {item.orderedQuantity} = ${ item.total }</ListGroupItem>
+        <ListGroupItem>
+        <img height="75px" src={`${item.image}`}/>
+        <span className="pl-3">{item.name} x {item.orderedQuantity} = ${ item.total }</span>
+        </ListGroupItem>
     )
   ) : (
     <strong>Cart is Empty</strong>
   )
 
   return (
-    <Container>
+    <Container className="mt-4">
       <h2 className="mb-3">My Cart</h2>
       <ListGroup flush>
         {cartItems}
         <ListGroupItem><strong>Total: ${cart.reduce((a, b) => { return a + b.total }, 0)}</strong></ListGroupItem>
-        <OrderButton hasProducts={hasProducts} cart={cart} />
       </ListGroup>
+      <OrderButton hasProducts={hasProducts} cart={cart} />
     </Container>
   )
 }

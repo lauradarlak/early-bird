@@ -20,8 +20,7 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route exact path='/categories/:category_slug' component={ProductsContainer} />
         <Route exact path='/order' component={Order} />
-        <Route exact path='/cart' render={routeProps => <FinalCart {...routeProps} cart={this.props.cart} />} />
-
+        <Route exact path='/cart' render={() => <FinalCart cart={this.props.cart} />} />
       </Switch>
       </div>
 

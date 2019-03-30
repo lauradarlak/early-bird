@@ -16,11 +16,12 @@ class Home extends Component {
     const { categories } = this.props;
     return (
       <React.Fragment>
-      <Container className="mt-4">
+      <Container className="my-4">
       <Jumbotron>
         <h1 className="display-4">earlybird.io</h1>
-        <p className="lead">Welcome to the <em>earlybird</em> ecommerce platform for the Ithaca Farmer's Market. Products are sorted by category. Within each category you will find products available from all of the farmers who grow, raise, or produce that product. By shopping with earlybird.io farmers know how much product to bring to market, and you will always get the fresh food you are looking for without arriving to the farmer's market at dawn!</p>
+        <p className="lead">Welcome to the <em>earlybird</em> ecommerce platform for the Ithaca Farmers Market. By shopping with earlybird.io farmers know how much product to bring to market, and you will always get the fresh food you are looking for without arriving to the farmer's market at dawn!</p>
         <hr className="my-2" />
+        <p className="lead mb-0">Products are sorted by category. Within each category you will find products available from all of the farmers who grow, raise, or produce that product.</p>
       </Jumbotron>
         <Categories categories={categories} />
       </Container>

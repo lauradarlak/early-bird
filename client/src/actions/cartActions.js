@@ -9,12 +9,14 @@ export const updateInventory = (item) => {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(res => {
+  })
+  .then(res => {
     if(res.ok) {
       redirect: window.location.replace("http://localhost:3000/order")
     } else {
       throw Error(`Request rejected with status ${res.status}`);
     }
+    return res.json()
   })
   .catch(console.error)
 }
