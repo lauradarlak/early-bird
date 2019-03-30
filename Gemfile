@@ -17,7 +17,8 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'active_model_serializers'
-gem 'foreman'
+gem 'foreman', '~> 0.82.0'
+gem 'thor', '~> 0.19.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

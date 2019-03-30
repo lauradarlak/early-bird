@@ -1,24 +1,34 @@
-# README
+# earlybird.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+earlybird.io is an ecommerce platform for farmers markets built with a React-Redux front-end and connected to a Rails API backend. Have you ever gone to a farmer’s market only to find that every vendor is sold out of eggs, organic bacon, or fresh whole chickens? earlybird.io is a solution to ensuring that Localvores, like you, always get the fresh food you’re looking, without needing to be first in line at the market. Also, by shopping with earlybird.io farmers know how much product to bring to market and are able to sell more product.
 
-Things you may want to cover:
+* Built front-end UI using React and Redux middleware to respond to and modify state change
 
-* Ruby version
+* Collected and persisted data to Rails API
 
-* System dependencies
+* Utilized React-Router to provide dynamic routing within a Single Page App
 
-* Configuration
+* Made use of async actions within Redux-thunk and fetch()
 
-* Database creation
+![](./public/productpage.png =1000px)
+![](./public/cartpage.png =1000px)
 
-* Database initialization
+## Installation
 
-* How to run the test suite
+Fork and clone repo
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+cd early-bird
+bundle install
+rails db:migrate
+rails db:seed
+```
+Then `rake start` to start Rails and React servers
 
-* Deployment instructions
+## Contributions
 
-* ...
+Bug reports and pull requests are welcome at https://github.com/lauradarlak/early-bird
+
+## Licence
+
+This project has been licensed under the MIT open source license.
