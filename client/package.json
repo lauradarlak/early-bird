@@ -4,10 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "react-scripts": "2.1.8",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {

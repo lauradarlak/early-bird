@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from './Home';
 import Order from '../components/Order';
@@ -32,4 +32,4 @@ const mapStateToProps = state => ({
   cart: state.cart
 });
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))
