@@ -11,7 +11,11 @@ class Api::ProductsController < ApplicationController
 
   def update
     product = Product.find_by(id: params[:id])
-    product.update(product_params)
+    if product.update(product_params)
+      render json: product
+    else
+      render json: { message: product.errors }, status: 400
+    end
   end
 
   private

@@ -6,7 +6,7 @@ const ProductItem = ({ dispatch, addToCart, product }) => {
 
   return (
     <Col md="4" className="mb-3">
-      <Card className="h-100" key={product.id}>
+      <Card className="h-100">
         <CardImg className="pt-3" height="200px" src={`${product.image}`}/>
         <CardBody>
           <CardTitle className="my-1">Product: {product.name}</CardTitle>

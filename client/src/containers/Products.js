@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { addToCart } from '../actions/productActions';
 import Cart from '../components/Cart'
 import ProductList from '../components/ProductsList';
-import { Container, Row, Col, Card,
-  Button, CardTitle, CardText } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 class ProductsContainer extends Component {
 

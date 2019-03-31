@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from './Home';
-import Cart from '../components/Cart';
 import Order from '../components/Order';
 import FinalCart from '../components/FinalCart';
 import Navigation from '../components/Navbar';

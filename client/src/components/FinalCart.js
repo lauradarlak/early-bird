@@ -12,7 +12,7 @@ import { Container, ListGroup, ListGroupItem } from 'reactstrap';
   const cartItems = hasProducts ? (
     orderedCart.map(item =>
         <ListGroupItem>
-        <img height="75px" src={`${item.image}`}/>
+        <img height="75px" src={`${item.image}`} alt={`${item.name}`}/>
         <span className="pl-3">{item.name} x {item.orderedQuantity} = ${ item.total }</span>
         </ListGroupItem>
     )

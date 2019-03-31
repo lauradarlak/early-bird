@@ -2,7 +2,7 @@ import React from 'react';
 import { compare } from '../Utils';
 
 import OrderButton from './OrderButton';
-import {  Card, Button, CardTitle, CardText, CardImg } from "reactstrap";
+import {  Card, CardText} from "reactstrap";
 
  const Cart = ({ cart, products }) => {
 
@@ -11,7 +11,7 @@ import {  Card, Button, CardTitle, CardText, CardImg } from "reactstrap";
 
   const cartItems = hasProducts ? (
     orderedCart.map(item =>
-        <CardText>{item.name} x {item.orderedQuantity} = ${ item.total }</CardText>
+        <CardText key={item.id}>{item.name} x {item.orderedQuantity} = ${ item.total }</CardText>
     )
   ) : (
     <strong>Cart is Empty</strong>

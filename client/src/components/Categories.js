@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Container, Row, Col, Card,
-  Button, CardTitle, CardText, CardImg } from "reactstrap";
+import { Row, Col, Card,
+  Button, CardTitle, CardImg } from "reactstrap";
 
 const Categories = ({ categories }) => (
   <React.Fragment>
@@ -12,7 +12,7 @@ const Categories = ({ categories }) => (
     </Row>
     <Row>
     {categories.map(category =>
-     <Col md="4" className="mb-3">
+     <Col md="4" className="mb-3" key={category.id}>
        <Card body>
        <CardImg height="200px" src={`${category.image}`}/>
         <CardTitle className="text-center font-weight-bold mt-3">{category.name}</CardTitle>

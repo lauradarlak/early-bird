@@ -6,14 +6,14 @@ import { Button } from "reactstrap";
     const handleOnSubmit = event => {
       const orderArray = cart;
       orderArray.map(item => {
-        updateInventory(item)
+        return updateInventory(item)
       })
     }
 
     return (
       <Button
         className="mt-3 d-inline"
-        disabled={hasProducts ? '' : 'disabled'}
+        disabled={hasProducts ? false : true}
         color="success" onClick={() => handleOnSubmit()}
         type="submit">Send Order</Button>
     )

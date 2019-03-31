@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProductItem from './ProductItem';
-import { Container, Row, Col, Card, CardBody,
-  Button, CardTitle, CardText, CardImg } from "reactstrap";
+import { Row } from "reactstrap";
 
 class ProductsList extends Component {
 
@@ -15,7 +14,7 @@ class ProductsList extends Component {
         <h2 className="mb-3">Browse {category.name}</h2>
         <Row>
           {category.products.map(product =>
-            <ProductItem product={product} dispatch={dispatch} addToCart={addToCart} />
+            <ProductItem key={product.id} product={product} dispatch={dispatch} addToCart={addToCart} />
           )}
         </Row>
       </React.Fragment>
