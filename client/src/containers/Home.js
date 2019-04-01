@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Jumbotron } from "reactstrap";
 import { fetchCategories } from '../actions/categoriesActions';
+import { addToCart } from '../actions/cartActions';
 import Categories from '../components/Categories';
 
 class Home extends Component {
 
   componentDidMount() {
-    if(this.props.categories.length === 0) {
-      this.props.fetchCategories()
+    if (this.props.cart.length === 0) {
+      this.props.fetchCategories();
     }
+
   }
 
   render() {
@@ -31,8 +33,9 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories.items
+  categories: state.categories.items,
+  cart: state.cart
 });
 
 
-export default connect(mapStateToProps, { fetchCategories })(Home)
+export default connect(mapStateToProps, { fetchCategories, addToCart })(Home)

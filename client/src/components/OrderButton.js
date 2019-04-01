@@ -1,13 +1,15 @@
 import React from 'react';
-import { updateInventory } from '../actions/cartActions';
+import { connect } from 'react-redux';
+import { updateInventory, resetCart } from '../actions/cartActions';
 import { Button } from "reactstrap";
 
-  const OrderButton = ({ hasProducts, cart }) => {
+  const OrderButton = ({ hasProducts, cart, resetCart }) => {
     const handleOnSubmit = event => {
       const orderArray = cart;
       orderArray.map(item => {
         return updateInventory(item)
       })
+      resetCart();
     }
 
     return (
@@ -20,4 +22,4 @@ import { Button } from "reactstrap";
 
   }
 
- export default OrderButton
+ export default connect(null, { resetCart })(OrderButton)

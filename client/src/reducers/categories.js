@@ -29,7 +29,11 @@ export default function categories(state = initialState, action) {
         error: action.payload.error,
         items: []
       };
-
+    case 'ADD':
+    debugger
+      if(action.payload.item.quantity > 0) {
+        action.payload.item.quantity -= 1
+      }
     default:
       return state;
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions/productActions';
+import { addToCart } from '../actions/cartActions';
 import Cart from '../components/Cart'
 import ProductList from '../components/ProductsList';
 import { Container, Row, Col } from "reactstrap";
