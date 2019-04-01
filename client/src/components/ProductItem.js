@@ -2,7 +2,7 @@
 import React from 'react';
 import {  Col, CardImg, CardBody, Card, Button, CardTitle, CardText } from "reactstrap";
 
-const ProductItem = ({ dispatch, addToCart, product }) => {
+const ProductItem = ({ dispatch, addToCart, product, slug }) => {
 
   return (
     <Col md="4" className="mb-3">
@@ -17,7 +17,7 @@ const ProductItem = ({ dispatch, addToCart, product }) => {
           </CardText>
         </CardBody>
         <div className="d-flex align-items-center my-3">
-          <Button className="mx-auto" color="success" onClick={() => dispatch(addToCart(product))}>Add to Cart</Button>
+          <Button className="mx-auto" color="success" onClick={() => dispatch(addToCart(product, slug))}>Add to Cart</Button>
         </div>
       </Card>
     </Col>

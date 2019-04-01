@@ -6,7 +6,7 @@ import { Row } from "reactstrap";
 class ProductsList extends Component {
 
   render() {
-    const { dispatch, addToCart, products } = this.props;
+    const { dispatch, addToCart, products, slug } = this.props;
     const category = products[0]
 
     return (
@@ -14,7 +14,7 @@ class ProductsList extends Component {
         <h2 className="mb-3">Browse {category.name}</h2>
         <Row>
           {category.products.map(product =>
-            <ProductItem key={product.id} product={product} dispatch={dispatch} addToCart={addToCart} />
+            <ProductItem key={product.id} product={product} dispatch={dispatch} slug={ slug } addToCart={addToCart} />
           )}
         </Row>
       </React.Fragment>

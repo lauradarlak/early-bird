@@ -1,10 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, purgeStoredState } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import rootReducer from './reducers/index';
-
-
 
 const enhancers = [];
 const middleware = [thunk];
@@ -24,5 +22,6 @@ const composedEnhancers = compose(
 
 export default () => {
   const store = createStore(persistedReducer, composedEnhancers);
-  return { store, persistor: persistStore(store) };
+  return { store, persistor: persistStore(store)};
+
 };

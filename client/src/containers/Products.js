@@ -16,7 +16,7 @@ class ProductsContainer extends Component {
       <Container>
         <Row className="mt-4">
           <Col md="9">
-            <ProductList products={selectedCategory} addToCart={addToCart} />
+            <ProductList products={selectedCategory} slug={category_slug} addToCart={addToCart} />
           </Col>
           <Col md="3">
             <Cart cart={this.props.cart} />

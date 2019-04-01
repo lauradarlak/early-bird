@@ -3,10 +3,12 @@ export const resetCart = () => ({
   type: 'RESET_CART'
 });
 
-export const addToCart = (item) => ({
-  type: 'ADD',
-  payload: { item }
+export const addToCart = (item, slug)  => ({
+    type: 'ADD',
+    payload: { item },
+    pathname: slug
 });
+
 
 // ** Async Actions **
 
