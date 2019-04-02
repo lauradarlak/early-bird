@@ -6,9 +6,11 @@ import { Button } from "reactstrap";
   const OrderButton = ({ hasProducts, cart, resetCart }) => {
     const handleOnSubmit = event => {
       const orderArray = cart;
+      console.log('A')
       orderArray.map(item => {
         return updateInventory(item)
       })
+      console.log('B')
       resetCart();
     }
 

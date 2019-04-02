@@ -23,5 +23,7 @@ const composedEnhancers = compose(
 export default () => {
   const store = createStore(persistedReducer, composedEnhancers);
   return { store, persistor: persistStore(store)};
-
 };
+purgeStoredState(persistConfig)
+
+{/*purgeStoredState(persistConfig)*/}
