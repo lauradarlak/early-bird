@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Row, Col, Card,
   Button, CardTitle, CardImg } from "reactstrap";
-import LikeButton from './LikeButton';
 
 class Categories extends Component {
 
@@ -22,7 +21,6 @@ class Categories extends Component {
            <Card body>
            <CardImg height="200px" src={`${category.image}`}/>
             <CardTitle className="text-center font-weight-bold mt-3">{category.name}</CardTitle>
-            <LikeButton />
             <Button color="success" tag={Link} to={`/categories/${category.slug}`}>Browse {category.name}</Button>
 
            </Card>
