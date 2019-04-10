@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { updateInventory, resetCart } from '../actions/cartActions';
 import { Button } from "reactstrap";
 
@@ -24,4 +25,4 @@ import { Button } from "reactstrap";
 
   }
 
- export default connect(null, { resetCart })(OrderButton)
+export default withRouter(connect(null, { resetCart })(OrderButton))

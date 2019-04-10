@@ -22,7 +22,7 @@ export const fetchCategoriesFailure = error => ({
 export function fetchCategories() {
   return dispatch => {
     dispatch(fetchCategoriesBegin());
-    return fetch('https://earlybird-app.herokuapp.com/api/categories')
+    return fetch('api/categories')
       .then(res => res.json())
       .then(json => {
         dispatch(fetchCategoriesSuccess(json));
