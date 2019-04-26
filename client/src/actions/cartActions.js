@@ -14,7 +14,7 @@ export const addToCart = (item, slug)  => ({
 
 export const updateInventory = (item) => {
 
-  fetch(`api/products/${item.id}`, {
+  fetch(`https://earlybird-app.herokuapp.com/api/products/${item.id}`, {
     headers: { 'Content-Type': 'application/json' },
     method: 'PATCH',
     body: JSON.stringify({
